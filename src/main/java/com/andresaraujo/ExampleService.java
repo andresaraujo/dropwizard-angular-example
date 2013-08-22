@@ -7,11 +7,9 @@ import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 
 /**
- * Created with IntelliJ IDEA.
+ * Project: ${PROJECT_NAME}
  * User: andres
- * Date: 8/22/13
- * Time: 10:57 AM
- * To change this template use File | Settings | File Templates.
+ * Date: 8/22/13 - 10:57 AM
  */
 public class ExampleService extends Service<ExampleServiceConfiguration> {
 
