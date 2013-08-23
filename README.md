@@ -1,7 +1,7 @@
 dropwizard-angular-example
 ==========================
 
-Example of using AngularJS with Dropwizard
+Example of using AngularJS with Dropwizard. Inspired from <https://github.com/gary-rowe/DropwizardEmberData>
 
 
 ##Requires:
