@@ -18,3 +18,6 @@ node_modules
 
 #bower components
 app/bower_components
+
+#compiled sources
+dist
