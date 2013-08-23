@@ -1,5 +1,6 @@
 package com.andresaraujo;
 
+import com.andresaraujo.health.AppHealthCheck;
 import com.hubspot.dropwizard.guice.GuiceBundle;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
@@ -53,6 +54,7 @@ public class AppService extends Service<AppConfiguration> {
     public void run(AppConfiguration configuration, Environment environment) throws Exception {
 
         // Add any specialised configuration here
+        environment.addHealthCheck(new AppHealthCheck());
 
     }
 

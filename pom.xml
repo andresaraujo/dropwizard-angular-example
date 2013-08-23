@@ -16,6 +16,7 @@
 
     <!-- Set the version levels for linked dependencies -->
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <dropwizard.version>0.6.2</dropwizard.version>
     </properties>
 
@@ -89,7 +90,7 @@
 
         <plugins>
 
-            <!-- Resources plugin to copy the Ember build contents into the target for packaging -->
+            <!-- Resources plugin to copy the Angular dist directory into the target for packaging -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -102,10 +103,10 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/assets/ember</outputDirectory>
+                            <outputDirectory>${basedir}/target/classes/assets</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/main/ember/build</directory>
+                                    <directory>src/main/app-client/dist</directory>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
