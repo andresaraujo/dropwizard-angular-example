@@ -17,7 +17,7 @@ Example of using AngularJS with Dropwizard. Inspired from <https://github.com/ga
 
 ###To launch server
 1. run **mvn compile exec:java**
-2. Open localhost:3000
+2. Open **localhost:3000**
 
 ###To build self contained jar
 1. run **maven package**
