@@ -5,7 +5,6 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
  
     // configurable paths
-    //dist -> directory where dropwizard can find it
     var yeomanConfig = {
         app: 'app',
         dist: 'dist'
