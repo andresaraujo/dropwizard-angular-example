@@ -36,11 +36,6 @@ public class AppGuiceModule extends AbstractModule {
     @Override
     protected void configure() {
 
-        // Post cache (only a single instance required)
-        //bind(InMemoryPostCache.class).asEagerSingleton();
-
-        // Post support (only a single instance required)
-        //bind(PostReadService.class).asEagerSingleton();
 
     }
 
