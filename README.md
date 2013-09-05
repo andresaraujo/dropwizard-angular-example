@@ -13,7 +13,7 @@ Example of using AngularJS with Dropwizard. Inspired from <https://github.com/ga
 ###Within src/main/app-client
 1. run **bower install** to add web libraries under **src/main/app-client/app/bower_components**
 2. run **npm install to** add node modules
-3. run **grunt** to compile web files to the dist directory.
+3. run **grunt** to compile web files to the dist directory or **grunt dev** to not minify scripts.
 
 ###To launch server
 1. run **mvn compile exec:java**
