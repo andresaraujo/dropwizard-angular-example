@@ -29,20 +29,17 @@ public class DummyResource {
     public List<Map> findAll() {
         List<Map> result = new ArrayList<Map>();
 
-        Map<String,Object> dummy = new HashMap();
-        dummy.put("id", 1);
-        dummy.put("name", "Java");
-        result.add(dummy);
+        String []awesomeThings={"HTML5 Boilerplate", "AngularJs", "Karma", "Java", "Dropwizard", "Maven/Grunt/Bower"};
 
-        dummy = new HashMap();
-        dummy.put("id", 2);
-        dummy.put("name", "Dropwizard");
-        result.add(dummy);
+        Map<String,Object> dummy;
 
-        dummy = new HashMap();
-        dummy.put("id", 3);
-        dummy.put("name", "Guice");
-        result.add(dummy);
+        int i=1;
+        for(String s : awesomeThings){
+            dummy = new HashMap();
+            dummy.put("id", i++);
+            dummy.put("name", s);
+            result.add(dummy);
+        }
 
         return result;
 

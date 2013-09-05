@@ -1,22 +1,51 @@
 'use strict';
 
 describe('Controller: MainCtrl', function () {
-
-  // load the controller's module
+  var MainCtrl;
+  var scope;
+  var fakeFactory, q, deferred;
+  var mockService;
+  //mock Application to allow us to inject our own dependencies
   beforeEach(module('NgAppApp'));
 
-  var MainCtrl,
-    scope;
+  beforeEach(function () {
+          mockService = {
+              get: function () {
+                  deferred = q.defer();
+                  // Place the fake return object here
+                  deferred.resolve([{id: 1, name: 'Java'}, {id:2, name: 'Dropwizard'}]);
+                  return deferred.promise;
+              }
+          };
+          spyOn(mockService, 'get').andCallThrough();
+      });
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  // Initialize the controller
+  beforeEach(inject(function ($controller, $rootScope, $q) {
+
+    //create an empty scope
     scope = $rootScope.$new();
+
+    q = $q;
+
+    //Declare controller with mock objects
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      $scope: scope,
+      DummySvc: mockService
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('awesomeThings Should have be defined and have zero objects', function () {
+        // Before $apply is called the promise hasn't resolved
+        expect(scope.awesomeThings).toBeDefined();
+        expect(scope.awesomeThings.length).toBe(0);
   });
+  it('awesomeThings Should have be defined and have two objects', function () {
+          // This propagates the changes to the models
+          // This happens itself when you're on a web page, but not in a unit test framework
+          scope.$apply();
+          expect(scope.awesomeThings).toBeDefined();
+          expect(scope.awesomeThings.length).toBe(2);
+  });
+
 });
